@@ -13,4 +13,14 @@ public class BackEnd2Controller : ControllerBase
     {
         return BackEnd2Result;
     }
+
+    [HttpPost]
+    public ActionResult WriteBackEndData(int valueToPost)
+    {
+        if (valueToPost == BackEnd2Result)
+        {
+            return Ok();
+        }
+        return BadRequest("Posted value did not match");
+    }
 }
